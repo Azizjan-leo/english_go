@@ -1,0 +1,81 @@
+body{
+	background-image: url("background.jpg");
+	background-size: cover;
+}
+#main_div{
+	margin: auto;
+	top: 15%;
+	vertical-align: center;
+	position: relative;
+	width: 790px; 
+	height: 540px;
+	background-color: fff;
+	border-radius: 6px; 			/*для закругления углов*/
+	-webkit-border-radius:	6px;	/*для закругления углов*/
+	-moz-border-radius:	5px;	 	/*для закругления углов*/
+	-khtml-border-radius:	10px;	/*для закругления углов*/
+	box-shadow: 0px 0px 10px white;	
+	padding: 7px;
+}
+#main_div h2{
+	color: blue;
+	text-align: center;
+	margin-top: 50px;
+}
+#register_form{
+	margin-top: 50px;
+}
+.intext {
+	border: 0px;
+	border-color: blue;
+	border-radius: 6px; 			/*для закругления углов*/
+	-webkit-border-radius:	4px;	/*для закругления углов*/
+	-moz-border-radius:	5px;	 	/*для закругления углов*/
+	-khtml-border-radius:	10px;
+	box-shadow: 0px 0px 10px grey;
+	padding:3px;
+	height: 30px;
+    width: 150px; 
+    color: 000; /*цвет шрифта в обычном состоянии*/
+    font-size: 12px; 
+	font-family: Verdana; 
+}
+#add_file{
+	cursor:pointer;
+	box-shadow: 0px 0px 10px grey;
+	width: 145px;
+	height: 24px;
+	padding-top:3px;
+	background-color: fff;
+	color: grey;
+	border-radius:	6px; /*Округление кнопки*/
+	border: 2px solid white; /*Делаем чёрную сплошную рамку размером в 1px*/
+}
+#sign_in{
+	width: 170px;
+	height: 30px;
+	background-color:blue;
+	color:white;
+	border-radius: 6px; 			/*для закругления углов*/
+	-webkit-border-radius:	4px;	/*для закругления углов*/
+	-moz-border-radius:	5px;	 	/*для закругления углов*/
+	-khtml-border-radius:	10px;
+	border-color: blue;
+	box-shadow: 0px 0px 10px blue;	
+}
+.thumb {
+    height: 240px;
+	width:160;
+    margin: 10px 5px 0 0;
+	border-radius: 8px; 			/*для закругления углов*/
+	-webkit-border-radius:	4px;	/*для закругления углов*/
+	-moz-border-radius:	5px;	 	/*для закругления углов*/
+	-khtml-border-radius:	10px;
+	border-color: blue;
+	box-shadow: 0px 0px 7px grey;
+}
+#list{
+	position:relative;
+	top: -315px;
+	left: -250px;
+}

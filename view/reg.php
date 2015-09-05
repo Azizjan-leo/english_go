@@ -61,7 +61,6 @@
 		}
 	}
 ?>
-<h2>REGISRATION</h2>
 <center>
 				<form id="register_form" name="register_form" enctype="multipart/form-data" method="post" action="">
 					<table width="350" height="310"  align="center" cellpadding="0" cellspacing="0" bgcolor="#FFF">
@@ -84,7 +83,7 @@
 						<tr>
 							<td align="center">
 								<div id="add_file" style="" onclick="document.getElementById('files').click();">Choose photo</div>
-								<input type="file" id="files" name="image" style="visibility:hidden;" multiple accept="image/*,image/jpeg" />
+								<input type="file" id="files" name="image" style="visibility:hidden;" accept="image/*,image/jpeg" />
 							</td>
 						</tr>
 						<tr>

@@ -77,5 +77,31 @@ body{
 #list{
 	position:relative;
 	top: -315px;
-	left: -250px;
+	left: 240px;
+}
+
+#reg_method{
+	position: relative;
+	width: 180px; 
+	height: auto;
+	float: left;
+	left: 60px;
+	top: 40px;
+}
+
+#signup_form{
+	position: relative;
+	width: auto; 
+	height: auto;
+	text-align: center;
+	float:right;
+	top: -30px;
+	right: 210px;
+}
+
+#sign_topic{
+	position: relative;
+	width: auto; 
+	height: 50px;
+	text-align: center;
 }

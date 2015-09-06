@@ -8,13 +8,10 @@
 	</head>
 	
 	<body>
-	
-		<?php
-			if($_SESSION['check']){
-				echo "Hello agein!<br/>";
-			}
-			else
-				echo "<a href='pages/other.php'>Sign In</a>";
-		?>
+<?php
+  session_start();
+	$_SESSION['check'] = TRUE;
+	echo "<a href='../index.php'>Back</a>";
+?>
 	</body>
 </html>

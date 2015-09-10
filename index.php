@@ -1,5 +1,11 @@
 <?php 
 	session_start();
+	if(isset($_POST["out"])){
+			unset($_SESSON['name']);
+			$_SESSION['check'] = false;
+			session_unset();
+			session_destroy();
+	}
 ?>
 <html>
 	<head>
@@ -11,10 +17,18 @@
 	
 		<?php
 			if($_SESSION['check']){
-				echo "Hello agein!<br/>";
+				echo $_SESSION["user_name"];
+				echo "<form  method='post' action=''>
+				<input type='submit' name='out' value='OUT'>
+			  </form>";
 			}
 			else
-				echo "<a href='pages/other.php'>Sign In</a>";
+				printf('
+						<a href="pages/signInUp.php?infor=%s">Sign In</a> <br/> or <br/> 
+						<a href="pages/signInUp.php?infor=%s">Sign up</a>',
+						signin,signup);
 		?>
+		
 	</body>
 </html>
+

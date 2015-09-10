@@ -1,6 +1,7 @@
 body{
 	background-image: url("image/bg.jpg");
 	background-size: cover;
+	font: normal 16px/normal "Times New Roman", Times, serif;
 }
 
 #sign{
@@ -55,4 +56,8 @@ text-shadow: -1px -1px 0 rgba(0,57,150,0.66);
 border: 1px solid #018dc4; /*углы*/
 -webkit-border-radius: 5px;
 border-radius: 5px;
+}
+
+table{
+text-align:center;
 }

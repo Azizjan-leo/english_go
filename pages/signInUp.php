@@ -34,6 +34,7 @@
 	<head>
 		<title>Tutorial</title>
 		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="includes/scripts.js"></script>
 	</head>
 	<body>
 	<?php
@@ -44,7 +45,7 @@
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
 					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><center><input type='submit' name='auth' value='ENTER'><center></td></tr>
+					<tr><td><input type='submit' name='auth' value='ENTER'></td></tr>
 				</table>
 			  </form></center></div></div>";
 			}
@@ -52,9 +53,10 @@
 				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
-					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><input type='password' name='r_password' placeholder='Repeat password' required/></td></tr>
-					<tr><td><center><input type='submit' name='signUp' value='ENTER'></center></td></tr>
+					<tr><td><input type='password' id='pass' name='password' placeholder='Password' required/></td></tr>
+					<tr><td><input type='password' id='passch' onchange='checkPass ()' name='r_password' placeholder='Repeat password' required/><br></td></tr>
+					<tr><td><b style='color: red' id='info'></b></tr></td>
+					<tr><td><input type='submit' name='signUp' value='ENTER'></td></tr>
 				</table>
 			  </form></center></div></div>";
 			}

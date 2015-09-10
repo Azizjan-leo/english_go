@@ -27,6 +27,10 @@
 						<a href="pages/signInUp.php?infor=%s">Sign In</a> <br/> or <br/> 
 						<a href="pages/signInUp.php?infor=%s">Sign up</a>',
 						signin,signup);
+				echo "Hello agein!<br/>";
+			}
+			else
+				echo "<a href='pages/other.php'>Sign In</a>";
 		?>
 		
 	</body>

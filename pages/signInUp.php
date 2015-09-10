@@ -40,23 +40,23 @@
 		if(isset($_GET["infor"])){
 			$inFor = $_GET["infor"];
 			if($inFor == signin && !$_SESSION["check"]){
-				echo "<center><br><br><form  method='post' action=''>
+				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
 					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><input type='submit' name='auth' value='ENTER'></td></tr>
+					<tr><td><center><input type='submit' name='auth' value='ENTER'><center></td></tr>
 				</table>
-			  </form></center>";
+			  </form></center></div></div>";
 			}
 			elseif($inFor == signup && !$_SESSION["check"]){
-				echo "<center><br><br><form  method='post' action=''>
+				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
 					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><input type='password' name='r_password' placeholder='Repite Password' required/></td></tr>
-					<tr><td><input type='submit' name='signUp' value='ENTER'></td></tr>
+					<tr><td><input type='password' name='r_password' placeholder='Repeat password' required/></td></tr>
+					<tr><td><center><input type='submit' name='signUp' value='ENTER'></center></td></tr>
 				</table>
-			  </form></center>";
+			  </form></center></div></div>";
 			}
 		}
 	if($_SESSION['check'] == TRUE)

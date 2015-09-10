@@ -34,7 +34,15 @@
 	<head>
 		<title>Tutorial</title>
 		<link rel="stylesheet" type="text/css" href="../style.css">
-		<script src="includes/scripts.js"></script>
+		<script>
+		//Проверка на совпадение паролей с помощью получения данных через id элемента.
+			function checkPass () 
+			{ 
+				with (document) 
+				getElementById ('info').innerHTML = (getElementById ('pass').value != getElementById ('passch').value) ? 
+				'PASSWORDS MISMACH' : ''; 
+			}
+		</script>
 	</head>
 	<body>
 	<?php

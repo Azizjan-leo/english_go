@@ -75,8 +75,10 @@
 			  </form></center></div></div>";
 			}
 		}
-	if($_SESSION['check'] == TRUE)
-		echo "<a href='../index.php'>Back</a>";
+	if($_SESSION['check'] == TRUE){
+		print
+		"<script>window.location.href='users_settings.php';</script>";
+	}
 ?>
 	</body>
 </html>

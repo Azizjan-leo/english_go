@@ -12,18 +12,16 @@
 			$user_data = mysql_fetch_array($query);
 		
 			if(!$user_data){			
-				mysql_query("INSERT INTO users VALUES('','$login','','$password','','')") or die(mysql_error());
+				mysql_query("INSERT INTO users VALUES('','$login','','','$password','','')") or die(mysql_error());
 				$_SESSION["check"] = TRUE;
 				$_SESSION["user_name"] = $login;
-				$_SESSION["user_id"] = (SELECT id FROM users WHERE name = $login);
-				$user_id = $_SESSION["user_id"];
-				mysql_query("INSERT INTO users_settings VALUES('user_id','','','')") or die(mysql_error());
+				$user_id = "SELECT id FROM users WHERE name = '$login";
+				echo $user_id."<br>";
 				echo "Welcome to Tht LenguaSity, ".$login."!<br>";
 			}
 			else
 				echo "Choose another name";
 			
-=======
 			mysql_query("INSERT INTO users VALUES('','$login','','$password','','')") or die(mysql_error());
 			$_SESSION["check"] = TRUE;
 			$_SESSION["user_name"] = $login;

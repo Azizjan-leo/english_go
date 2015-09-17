@@ -7,7 +7,6 @@
 		$r_password = $_POST["r_password"];
 		if($password == $r_password){
 			$login = $_POST["login"];
-<<<<<<< HEAD
 			
 			$query = mysql_query("SELECT * FROM users WHERE name = '$login'");
 			$user_data = mysql_fetch_array($query);
@@ -16,6 +15,9 @@
 				mysql_query("INSERT INTO users VALUES('','$login','','$password','','')") or die(mysql_error());
 				$_SESSION["check"] = TRUE;
 				$_SESSION["user_name"] = $login;
+				$_SESSION["user_id"] = (SELECT id FROM users WHERE name = $login);
+				$user_id = $_SESSION["user_id"];
+				mysql_query("INSERT INTO users_settings VALUES('user_id','','','')") or die(mysql_error());
 				echo "Welcome to Tht LenguaSity, ".$login."!<br>";
 			}
 			else
@@ -26,7 +28,6 @@
 			$_SESSION["check"] = TRUE;
 			$_SESSION["user_name"] = $login;
 			echo "Welcome to Tht LenguaSity, ".$login."!<br>";
->>>>>>> ac0ecd1755a3065e433ebcce471f064cc1c08f13
 		}
 		else
 			echo "Password must be equals!";

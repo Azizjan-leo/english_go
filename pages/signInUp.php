@@ -50,19 +50,12 @@
 <html>
 	<head>
 		<title>Tutorial</title>
-<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
-=======
-		<link rel="stylesheet" type="text/css" href="../style.css">
->>>>>>> ac0ecd1755a3065e433ebcce471f064cc1c08f13
-		<script>
-		//Проверка на совпадение паролей с помощью получения данных через id элемента.
-			function checkPass () 
-			{ 
-				with (document) 
-				getElementById ('info').innerHTML = (getElementById ('pass').value != getElementById ('passch').value) ? 
-				'PASSWORDS MISMACH' : ''; 
-			}
+		<script>  
+			function checkPass() {  
+			with(document)
+			getElementById('info').innerHTML = (getElementById('pass').value != getElementById('passch').value) ? 'PASSWORDS MISMACH' : 'OK!';
+			}  
 		</script>
 	</head>
 	<body>
@@ -83,7 +76,7 @@
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
 					<tr><td><input type='password' id='pass' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><input type='password' id='passch' onchange='checkPass ()' name='r_password' placeholder='Repeat password' required/><br></td></tr>
+					<tr><td><input type='password' id='passch' onKeyUp='checkPass()' name='r_password' placeholder='Repeat password' required/><br></td></tr>
 					<tr><td><b style='color: red' id='info'></b></tr></td>
 					<tr><td><input type='submit' name='signUp' value='ENTER'></td></tr>
 				</table>

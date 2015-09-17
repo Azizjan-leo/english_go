@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<title>Tutorial</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
 	
 	<body>
@@ -24,8 +24,8 @@
 			}
 			else
 				printf('
-						<a href="pages/signInUp.php?infor=%s">Sign In</a> <br/> or <br/> 
-						<a href="pages/signInUp.php?infor=%s">Sign up</a>',
+						<div id="sign"><div class="signtext"><a href="pages/signInUp.php?infor=%s">Sign In</a> <br/> or <br/> 
+						<a href="pages/signInUp.php?infor=%s">Sign up</a></div> </div>',
 						signin,signup);
 		?>
 		

@@ -7,10 +7,19 @@
 		$r_password = $_POST["r_password"];
 		if($password == $r_password){
 			$login = $_POST["login"];
-			mysql_query("INSERT INTO users VALUES('','$login','','$password','','')") or die(mysql_error());
-			$_SESSION["check"] = TRUE;
-			$_SESSION["user_name"] = $login;
-			echo "Welcome to Tht LenguaSity, ".$login."!<br>";
+			
+			$query = mysql_query("SELECT * FROM users WHERE name = '$login'");
+			$user_data = mysql_fetch_array($query);
+		
+			if(!$user_data){			
+				mysql_query("INSERT INTO users VALUES('','$login','','$password','','')") or die(mysql_error());
+				$_SESSION["check"] = TRUE;
+				$_SESSION["user_name"] = $login;
+				echo "Welcome to Tht LenguaSity, ".$login."!<br>";
+			}
+			else
+				echo "Choose another name";
+			
 		}
 		else
 			echo "Password must be equals!";
@@ -33,30 +42,40 @@
 <html>
 	<head>
 		<title>Tutorial</title>
-		<link rel="stylesheet" type="text/css" href="../style.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+		<script>
+		//Проверка на совпадение паролей с помощью получения данных через id элемента.
+			function checkPass () 
+			{ 
+				with (document) 
+				getElementById ('info').innerHTML = (getElementById ('pass').value != getElementById ('passch').value) ? 
+				'PASSWORDS MISMACH' : ''; 
+			}
+		</script>
 	</head>
 	<body>
 	<?php
 		if(isset($_GET["infor"])){
 			$inFor = $_GET["infor"];
 			if($inFor == signin && !$_SESSION["check"]){
-				echo "<center><br><br><form  method='post' action=''>
+				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
 					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
 					<tr><td><input type='submit' name='auth' value='ENTER'></td></tr>
 				</table>
-			  </form></center>";
+			  </form></center></div></div>";
 			}
 			elseif($inFor == signup && !$_SESSION["check"]){
-				echo "<center><br><br><form  method='post' action=''>
+				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
-					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><input type='password' name='r_password' placeholder='Repite Password' required/></td></tr>
+					<tr><td><input type='password' id='pass' name='password' placeholder='Password' required/></td></tr>
+					<tr><td><input type='password' id='passch' onchange='checkPass ()' name='r_password' placeholder='Repeat password' required/><br></td></tr>
+					<tr><td><b style='color: red' id='info'></b></tr></td>
 					<tr><td><input type='submit' name='signUp' value='ENTER'></td></tr>
 				</table>
-			  </form></center>";
+			  </form></center></div></div>";
 			}
 		}
 	if($_SESSION['check'] == TRUE)

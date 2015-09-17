@@ -9,7 +9,7 @@
 ?>
 <html>
 	<head>
-		<title>Tutorial</title>
+		<title>English-go</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
 	

@@ -7,6 +7,7 @@
 		$r_password = $_POST["r_password"];
 		if($password == $r_password){
 			$login = $_POST["login"];
+<<<<<<< HEAD
 			
 			$query = mysql_query("SELECT * FROM users WHERE name = '$login'");
 			$user_data = mysql_fetch_array($query);
@@ -20,6 +21,12 @@
 			else
 				echo "Choose another name";
 			
+=======
+			mysql_query("INSERT INTO users VALUES('','$login','','$password','','')") or die(mysql_error());
+			$_SESSION["check"] = TRUE;
+			$_SESSION["user_name"] = $login;
+			echo "Welcome to Tht LenguaSity, ".$login."!<br>";
+>>>>>>> ac0ecd1755a3065e433ebcce471f064cc1c08f13
 		}
 		else
 			echo "Password must be equals!";
@@ -42,7 +49,11 @@
 <html>
 	<head>
 		<title>Tutorial</title>
+<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+=======
+		<link rel="stylesheet" type="text/css" href="../style.css">
+>>>>>>> ac0ecd1755a3065e433ebcce471f064cc1c08f13
 		<script>
 		//Проверка на совпадение паролей с помощью получения данных через id элемента.
 			function checkPass () 

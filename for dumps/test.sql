@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 17 2015 г., 17:20
+-- Время создания: Сен 17 2015 г., 18:04
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.3.29
 
@@ -41,15 +41,22 @@ CREATE TABLE IF NOT EXISTS `images` (
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `login` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `photo` blob NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`) VALUES
+(28, 'aza', 'aza'),
+(29, 'asa', 'asa'),
+(30, 'asa', 'asa'),
+(31, 'gdg', 'gdg'),
+(32, 'gdg', 'gdg');
 
 -- --------------------------------------------------------
 

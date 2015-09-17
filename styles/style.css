@@ -5,11 +5,12 @@
 }
 
 #sign{
-	width: 350px; 
+	width: 500px;
 	height: 300px;
 	position:relative; /*Положение блока относительно исходного места*/
+	right: -500px;
 	margin: auto; /*Выравнивание блока по центру страницы*/
-	top: 20%;
+	top: 6%;
 	background: rgba(255,255,255,0.7); /*Прозрачность блока*/
 	border-radius: 15px; 			/*скругление углов блока*/
 	-webkit-border-radius: 15px;	/*-//- для различных браузеров*/
@@ -20,7 +21,9 @@
 }
 
 .signtext {
-	padding-top:20%;
+	padding-top:15%;
+	position:absolute;
+	left: 25%;
 }
 
 input[type="text"], input[type="password"]{
@@ -60,4 +63,9 @@ border-radius: 5px;
 
 table{
 text-align:center;
+}
+
+img{
+width: 32px;
+height: 32px;
 }

@@ -46,8 +46,8 @@
 		<script>  
 			function checkPass() {  
 			with(document)
-			getElementById('info').innerHTML = (getElementById('pass').value != getElementById('passch').value) ? 'PASSWORDS MISMACH' : 'OK!';
-			}  
+			getElementById('info').innerHTML = (getElementById('pass').value != getElementById('passch').value) ? '<img src="../image/no.png">' : (document.getElementById("pass").value.length==document.getElementById("passch").value.length) ? '<img src="../image/ok.png">' : '<img src="../image/no.png">';
+			} 
 		</script>
 	</head>
 	<body>
@@ -67,9 +67,9 @@
 				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
-					<tr><td><input type='password' id='pass' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><input type='password' id='passch' onKeyUp='checkPass()' name='r_password' placeholder='Repeat password' required/><br></td></tr>
-					<tr><td><b style='color: red' id='info'></b></tr></td>
+					<tr><td><input type='password' id='pass' onKeyUp='checkPass()' name='password' placeholder='Password' required/></td></tr>
+					<tr><td><input type='password' id='passch' onKeyUp='checkPass()' name='r_password' placeholder='Repeat password' required/><br></td>
+					<td><b style='color: red' id='info'></b></td></tr>
 					<tr><td><input type='submit' name='signUp' value='ENTER'></td></tr>
 				</table>
 			  </form></center></div></div>";

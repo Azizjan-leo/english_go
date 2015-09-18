@@ -24,7 +24,7 @@
 			}
 			else
 				printf('
-						<div id="sign"><div class="signtext"><a href="pages/signInUp.php?infor=%s">Sign In</a> <br/> or <br/> 
+						<div id="sign_form"><div class="signtext"><a href="pages/signInUp.php?infor=%s">Sign In</a> <br/> or <br/> 
 						<a href="pages/signInUp.php?infor=%s">Sign up</a></div> </div>',
 						signin,signup);
 		?>

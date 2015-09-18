@@ -43,12 +43,7 @@
 	<head>
 		<title>Tutorial</title>
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
-		<script>  
-			function checkPass() {  
-			with(document)
-			getElementById('info').innerHTML = (getElementById('pass').value != getElementById('passch').value) ? '<img src="../image/no.png">' : (document.getElementById("pass").value.length==document.getElementById("passch").value.length) ? '<img src="../image/ok.png">' : '<img src="../image/no.png">';
-			} 
-		</script>
+		<script src="../scripts/scripts.js"></script>
 	</head>
 	<body>
 	<?php
@@ -67,7 +62,7 @@
 				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
-					<tr><td><input type='password' id='pass' onKeyUp='checkPass()' name='password' placeholder='Password' required/></td></tr>
+					<tr><td><input type='password' id='pass' onblur='checkPass()' name='password' placeholder='Password' required/></td></tr>
 					<tr><td><input type='password' id='passch' onKeyUp='checkPass()' name='r_password' placeholder='Repeat password' required/><br></td>
 					<td><b style='color: red' id='info'></b></td></tr>
 					<tr><td><input type='submit' name='signUp' value='ENTER'></td></tr>

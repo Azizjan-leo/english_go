@@ -4,13 +4,9 @@
 	font: normal 16px/normal "Times New Roman", Times, serif;
 }
 
-#sign{
-	width: 500px;
-	height: 300px;
+#sign, #sign_form{
 	position:relative; /*Положение блока относительно исходного места*/
-	right: -500px;
 	margin: auto; /*Выравнивание блока по центру страницы*/
-	top: 6%;
 	background: rgba(255,255,255,0.7); /*Прозрачность блока*/
 	border-radius: 15px; 			/*скругление углов блока*/
 	-webkit-border-radius: 15px;	/*-//- для различных браузеров*/
@@ -20,10 +16,24 @@
 	box-shadow: 0px 0px 5px white;
 }
 
+#sign {
+	width: 500px;
+	height: 300px;
+	top: 20%;
+}
+
+#sign_form{
+	width: 400px;
+	height: 200px;
+	top: 6%;
+	left:32%;
+}
+
 .signtext {
 	padding-top:15%;
 	position:absolute;
-	left: 25%;
+	right: 24%;
+	left: 24%;
 }
 
 input[type="text"], input[type="password"]{

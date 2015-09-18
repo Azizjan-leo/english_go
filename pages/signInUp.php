@@ -11,11 +11,11 @@
 			$query = mysql_query("SELECT * FROM users WHERE name = '$login'");
 			$user_data = mysql_fetch_array($query);
 		
-			if(!$user_data){			
+			if(!$user_data){
+				$password = md5($password);
 				mysql_query("INSERT INTO users VALUES('','$login','$password')") or die(mysql_error());
 				$_SESSION["check"] = TRUE;
 				$_SESSION["user_name"] = $login;
-				$user_id = mysql_query("SELECT id FROM users WHERE name = '$login'");
 				echo $user_id."<br>";
 				echo "Welcome to Tht LenguaSity, ".$login."!<br>";
 			}

@@ -41,7 +41,7 @@
 ?>
 <html>
 	<head>
-		<title>Tutorial</title>
+		<title>EnglishGo</title>
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
 		<script src="../scripts/scripts.js"></script>
 	</head>

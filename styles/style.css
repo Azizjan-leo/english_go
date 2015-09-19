@@ -1,10 +1,11 @@
-﻿body{
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext);
+body{
 	background-image: url("../image/bg.jpg");
 	background-size: cover;
-	font: normal 16px/normal "Times New Roman", Times, serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
-#sign, #sign_form{
+#sign, #sign_form, #settings{
 	position:relative; /*Положение блока относительно исходного места*/
 	margin: auto; /*Выравнивание блока по центру страницы*/
 	background: rgba(255,255,255,0.7); /*Прозрачность блока*/
@@ -33,6 +34,18 @@
 	padding-top:15%;
 	position:absolute;
 	left: 120px;
+}
+
+#settings {
+	top:15%;
+	width: 700px;
+	height: 500px;
+}
+#settings p {
+font-size: 3pc;
+}
+#settings table {
+font-size: 17pt;
 }
 
 input[type="text"], input[type="password"]{
@@ -70,11 +83,80 @@ border: 1px solid #018dc4; /*углы*/
 border-radius: 5px;
 }
 
-table{
-text-align:center;
-}
-
 img{
 width: 32px;
 height: 32px;
 }
+
+/*Строка переключателя пола*/
+.toggle-bg{
+	background: #fff linear-gradient(#BCBCBC, #fff0f5);
+    display: block; /*Для установки высоты и ширины*/
+    float: left; /*Расположение*/
+    height: 12px;
+    position: relative;
+    width: 35px;
+	border-radius: 8px; /*закругление*/
+	box-shadow: 0 1px 0 #fff, inset 0 0 2px #d7dee3, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+}
+ 
+.toggle-bg input{
+    height: 28px;
+    left: 0;
+    margin: 0; /*Сбрось поля и отступa*/
+    opacity: 0; /*Прозрачность*/
+    padding: 0;
+    position: absolute;
+    top: -10px; /* Сдвиг по вертикали */
+    width: 36px;
+    z-index: 2; /*Расположение поверх switch*/
+}
+ 
+ /*Переключатель*/
+.switch{
+    background: radial-gradient(ellipse at center, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#cccccc 100%);
+    display: block;
+    float: left;
+    height: 18px;
+    left: -1px;
+    position: relative;
+    top: -4px; /*Оцентрировать по вертикали */
+    width: 18px;
+    z-index: 1; /*Расположение под input*/
+	border-radius: 8px;
+	transition: left .2s ease; /*Плавный переход*/
+	box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+}
+ 
+.toggle-bg input:checked~.switch{ left: -1px; } /*Исходная позиция переключателя*/
+.toggle-bg input~:checked~.switch{ left: 16px; } /*окончательная относительная позиция переключателя*/
+.toggle-bg input:checked{ z-index: 0; }
+/*Конец переключателя поля пол*/
+
+/*Ползунок*/
+#slider {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  background: #fff linear-gradient(#BCBCBC, #fff0f5);
+  overflow: hidden;
+}
+#slider::-moz-range-thumb {  /* ползунок в Firefox */
+  border-radius: 2px;
+}
+#slider::-moz-range-track {  /* линия, по которой он ездит в Firefox */
+  background: none;
+  border: none;
+}
+#slider::-webkit-slider-thumb {  /* ползунок в Хроме */
+  -webkit-appearance: none;
+  width:20px;
+  height:20px;
+  border: 1px solid #818181;
+  border-radius: 2px;
+  background-image: linear-gradient(#dedede, #f2f2f2);
+}
+/*-------------------*/

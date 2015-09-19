@@ -32,8 +32,7 @@
 .signtext {
 	padding-top:15%;
 	position:absolute;
-	right: 24%;
-	left: 24%;
+	left: 120px;
 }
 
 input[type="text"], input[type="password"]{

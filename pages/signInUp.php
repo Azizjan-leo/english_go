@@ -16,8 +16,7 @@
 				mysql_query("INSERT INTO users VALUES('','$login','$password','','','','','')") or die(mysql_error());
 				$_SESSION["check"] = TRUE;
 				$_SESSION["user_name"] = $login;
-				echo $user_id."<br>";
-				echo "Welcome to Tht LenguaSity, ".$login."!<br>";
+				header('location: ../index.php');
 			}
 			else
 				echo "Choose another name";
@@ -33,7 +32,7 @@
 			if($user_data["password"] == $e_password){	
 			$_SESSION["user_name"] = $user_data["name"];
 			$_SESSION["check"] = TRUE;
-			echo "We are happy to see you agein, ".$_SESSION['user_name']."!<br>";
+			header('location: ../index.php');
 		}
 		else 
 			echo "Wrong login or password";
@@ -70,10 +69,6 @@
 			  </form></center></div></div>";
 			}
 		}
-	if($_SESSION['check'] == TRUE){
-		print
-		"<script>window.location.href='users_settings.php';</script>";
-	}
 ?>
 	</body>
 </html>

@@ -6,8 +6,11 @@ with(document)
 		getElementById('info').innerHTML = (getElementById('pass').value != getElementById('passch').value) ?
 		'<img src="../image/no.png">' : (document.getElementById("pass").value.length==document.getElementById("passch").value.length) ?
 		'<img src="../image/ok.png">' : '<img src="../image/no.png">';}
+		else{
+			getElementById('info').innerHTML = '';
+		}
 	}
 	else {
-		getElementById('info').innerHTML = ''
+		getElementById('info').innerHTML = '';
 	}
 } 

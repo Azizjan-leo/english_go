@@ -13,7 +13,7 @@
 		
 			if(!$user_data){
 				$password = md5($password);
-				mysql_query("INSERT INTO users VALUES('','$login','$password')") or die(mysql_error());
+				mysql_query("INSERT INTO users VALUES('','$login','$password','','','','','')") or die(mysql_error());
 				$_SESSION["check"] = TRUE;
 				$_SESSION["user_name"] = $login;
 				echo $user_id."<br>";

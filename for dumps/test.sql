@@ -2,10 +2,10 @@
 -- version 4.0.10.6
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Сен 17 2015 г., 18:04
--- Версия сервера: 5.5.41-log
--- Версия PHP: 5.3.29
+-- Host: 127.0.0.1:3306
+-- Generation Time: Sep 19, 2015 at 10:57 AM
+-- Server version: 5.5.41-log
+-- PHP Version: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,61 +17,40 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `test`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `images`
+-- Table structure for table `images`
 --
 
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` blob NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
+  `sex` tinyint(4) NOT NULL,
+  `skil_color` int(11) NOT NULL,
+  `hair_length` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
-
---
--- Дамп данных таблицы `users`
---
-
-INSERT INTO `users` (`id`, `name`, `password`) VALUES
-(28, 'aza', 'aza'),
-(29, 'asa', 'asa'),
-(30, 'asa', 'asa'),
-(31, 'gdg', 'gdg'),
-(32, 'gdg', 'gdg');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `users_settings`
---
-
-CREATE TABLE IF NOT EXISTS `users_settings` (
-  `id` int(11) NOT NULL,
-  `nick` varchar(20) NOT NULL,
-  `age` int(150) NOT NULL,
-  `sex` int(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='All users settings will be here';
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

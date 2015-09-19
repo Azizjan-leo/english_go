@@ -16,17 +16,23 @@
 	<body>
 	
 		<?php
-			if($_SESSION['check']){
-				echo $_SESSION["user_name"];
-				echo "<form  method='post' action=''>
-				<input type='submit' name='out' value='OUT'>
-			  </form>";
-			}
-			else
+			if(!$_SESSION['check']){
 				printf('
 						<div id="sign_form"><div class="signtext"><a href="pages/signInUp.php?infor=%s">Sign In</a> <br/> or <br/> 
 						<a href="pages/signInUp.php?infor=%s">Sign up</a></div> </div>',
 						signin,signup);
+			}
+			else{
+				echo $_SESSION["user_name"];
+				print '<form  method="post">
+				<input type="submit" name="out" value="OUT">
+				</form>
+				<a href="pages/kitchen.php">Kitchen</a><br/>
+				<a href="pages/zoo.php">Zoo</a><br/>
+				<a href="pages/cinema.php">Cinema</a><br/>';
+			  
+			}
+				
 		?>
 		
 	</body>

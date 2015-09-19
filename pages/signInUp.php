@@ -26,7 +26,7 @@
 	}
 	if(isset($_POST["auth"])){
 		$e_login = $_POST["login"];
-		$e_password = $_POST["password"];
+		$e_password = md5($_POST["password"]);
 		echo $user_data["password"], $user_data['login'];
 		$query = mysql_query("SELECT * FROM users WHERE name = '$e_login'");
 		$user_data = mysql_fetch_array($query);

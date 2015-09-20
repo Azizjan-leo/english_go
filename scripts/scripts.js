@@ -13,4 +13,18 @@ with(document)
 	else {
 		getElementById('info').innerHTML = '';
 	}
-} 
+}
+
+function checkGender(){
+	var z = document.getElementsByName('toggle');
+	for (var i = 0; i < z.length; i++)  {
+		if  (z[i].checked) {
+			if (z[i].value == 'Male'){
+				document.getElementById('genderInfo').innerHTML = '<img src="../image/male.png">';
+			}
+			else {
+				document.getElementById('genderInfo').innerHTML = '<img src="../image/female.png">';
+			}
+		}
+	}
+}

@@ -1,8 +1,8 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext);
-body{
+﻿body{
 	background-image: url("../image/bg.jpg");
 	background-size: cover;
-	font-family: 'Open Sans', sans-serif;
+	font-family: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
+	height: auto !important;
 }
 
 #sign, #sign_form, #settings{
@@ -34,6 +34,17 @@ body{
 	padding-top:15%;
 	position:absolute;
 	left: 120px;
+}
+
+.user_stat{
+float:right;
+background: yellow;
+width: 230px;
+height: 84px;
+}
+
+.nav_menu{
+float:left;
 }
 
 #settings {
@@ -160,3 +171,119 @@ height: 32px;
   background-image: linear-gradient(#dedede, #f2f2f2);
 }
 /*-------------------*/
+#header, #navigation, #content, #footer{
+position: relative;
+margin:auto;
+}
+#header{
+background: rgba(255,255,255,0.7);
+width:970px;
+height:150px;
+}
+
+#navigation{
+height:84px;
+width:970px;
+}
+
+#content{
+background:white;
+width:970px;
+height:500px;
+}
+
+#gen_content{
+
+}
+
+#footer{
+background: rgba(255,255,255,0.7);
+width:970px;
+height:50px;
+}
+
+
+/*---------------------Navigation-----------------------*/
+.nav_menu{
+position: relative;
+width: 740px;
+background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
+z-index: 1000;
+}
+#menu {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	font-family: Georgia;
+	overflow: visible;
+	}
+
+#gradient_bg{
+background: linear-gradient(to bottom, rgba(58, 162, 173, 1) 0, rgba(62, 188, 207, 0.96) 100%);
+}
+	
+#menu li {
+	list-style: none;
+	float: left;
+	height: 72px;
+	padding: 0;
+	margin: 0;
+	width: 185px;
+	text-align: center;
+	position: relative;
+	padding-top: 12px;
+	}
+	
+#menu li ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 220px;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 84px;
+	}
+#menu li ul li {
+	float: none;
+	height: 33px;
+	margin: 0;
+	width: 220px;
+	text-align: center;
+	}
+
+#menu  ul  li a {
+width: 220px;
+}
+	
+#menu li a {
+	display: block;
+	width: 185px;
+	height: 84px;
+	color: #fff;
+	text-decoration: none;
+	}
+	
+#menu > li > a > div > span {
+  color: rgba(255, 255, 255, .75);
+  display: block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: .7rem;
+  font-style: italic;
+  line-height: 1rem;
+  max-width: 260px;
+}
+
+#menu > li > a {
+    max-width: 500px;
+    font-size: 1.7rem;
+    line-height: 2rem;
+	font-family: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
+  }
+#menu li:hover ul, #menu li.jshover ul {
+	display: block;
+	}
+#menu li:hover, #menu li.jshover {
+	 background-color: rgba(0, 0, 0, .15);
+	}
+/*---------------------------------------------*/

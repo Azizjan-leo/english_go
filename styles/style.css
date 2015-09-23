@@ -3,7 +3,42 @@
 	background-size: cover;
 	font-family: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
 	height: auto !important;
+	margin:0;
 }
+
+/*-------------------*/
+#header, #navigation, #content, #footer{
+position: relative;
+margin:auto;
+}
+#header{
+background: rgba(255,255,255,0.7);
+height:150px;
+width: 100%;
+}
+
+#navigation{
+background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
+height:84px;
+width: 100%;
+}
+
+#content{
+background:white;
+height:500px;
+width: 90%;
+}
+
+#gen_content{
+
+}
+
+#footer{
+background: rgba(255,255,255,0.7);
+height:50px;
+width: 90%;
+}
+
 
 #sign, #sign_form, #settings{
 	position:relative; /*Положение блока относительно исходного места*/
@@ -37,13 +72,35 @@
 }
 
 .user_stat{
-float:right;
-width: 230px;
-height: 84px;
+	float:right;
+	width: 300px;
+	height: 84px;
+}
+
+.user_stat img{
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
 }
 
 .nav_menu{
-float:left;
+	float:left;
+}
+
+.user_data{
+	margin-left: 40px;
+	width:230px;
+	height:84px;
+}
+
+.left_pos{
+	float: left;
+	width: 50px;
+}
+
+.right_pos{
+	margin-left:55px;
 }
 
 #settings {
@@ -93,7 +150,7 @@ border: 1px solid #018dc4; /*углы*/
 border-radius: 5px;
 }
 
-img{
+#sign img{
 width: 32px;
 height: 32px;
 }
@@ -169,39 +226,6 @@ height: 32px;
   border-radius: 2px;
   background-image: linear-gradient(#dedede, #f2f2f2);
 }
-/*-------------------*/
-#header, #navigation, #content, #footer{
-position: relative;
-margin:auto;
-}
-#header{
-background: rgba(255,255,255,0.7);
-width:970px;
-height:150px;
-}
-
-#navigation{
-background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
-height:84px;
-width:970px;
-}
-
-#content{
-background:white;
-width:970px;
-height:500px;
-}
-
-#gen_content{
-
-}
-
-#footer{
-background: rgba(255,255,255,0.7);
-width:970px;
-height:50px;
-}
-
 
 /*---------------------Navigation-----------------------*/
 .nav_menu{

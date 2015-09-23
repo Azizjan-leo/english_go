@@ -3,13 +3,15 @@
 ?>
 <html>
 	<head>
-		<title>LenguaSity</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+		<title>English-go</title>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
 	<body>
 		<?php
 		$url = "../index.php";
 			if(!$_SESSION['check'])
-				echo '<script type="text/javascript">window.location.href="'.$url.'"</script>'; // если вошел не авторизованный чел его перенаправит на индекс
+				echo '<script type="text/javascript">window.location.href="signInUp.php"</script>'; // если вошел не авторизованный чел его перенаправит на индекс
 			else{
 				if(isset($_POST["upload"])){
 					echo '<center><br><br><form method="POST" enctype="multipart/form-data"><table>
@@ -24,10 +26,6 @@
 						<br><input type="submit" name="upload" value="Upload new video" style="width: 230px;"/>
 						</form></center>';
 				}
-					$connect = mysql_connect ("localhost","root","") or die(mysql_error());
-					mysql_query("set names cp1251");
-					mysql_query("set character_set_server=cp1251");
-					mysql_select_db("tutorial") or die(mysql_error());
 				function Uploading($files){
 					for($i = 0; $i < count($files['name']); $i++){
 						move_uploaded_file($files['tmp_name'][$i], 'unloaded_videos/'.$files['name'][$i]); 

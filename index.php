@@ -55,9 +55,7 @@
 					
 				</div>
 				<div id="gen_content">
-				<form  method="post">
-				<input type="submit" name="out" value="OUT">
-				</form>
+				<a href="index.php"><button type="submit" name="out" value="out">Submit</button></a>
 				</div>
 				</div>
 				<div id="footer">Footer</div>

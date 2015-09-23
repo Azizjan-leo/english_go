@@ -16,7 +16,7 @@
 				mysql_query("INSERT INTO users VALUES('','$login','$password','','','','','')") or die(mysql_error());
 				$_SESSION["check"] = TRUE;
 				$_SESSION["user_name"] = $login;
-				header('location: ../index.php');
+				header('location: users_settings.php');
 			}
 			else
 				echo "Choose another name";
@@ -32,7 +32,7 @@
 			if($user_data["password"] == $e_password){	
 			$_SESSION["user_name"] = $user_data["name"];
 			$_SESSION["check"] = TRUE;
-			header('location: ../index.php');
+			header('location: users_settings.php');
 		}
 		else 
 			echo "Wrong login or password";

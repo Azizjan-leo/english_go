@@ -24,7 +24,7 @@
 						signin,signup);
 			}
 			else{
-				print '<div id="header"><center>HEADER</center></div>
+				print '
 					<div id="navigation">
 						<div class="nav_menu">
 							<ul id="menu">

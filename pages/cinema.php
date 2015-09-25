@@ -7,6 +7,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>English-go</title>
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+		<script src="../scripts/scripts.js"></script>
+
 	</head>
 	
 	<body>
@@ -50,19 +52,16 @@
 					</div>
 				<div id="content">
 				<div id="gen_content">';			
-			
-				if(isset($_POST["upload"])){
-					echo '<center><br><br><form method="POST" enctype="multipart/form-data"><table>
+					echo '<div id="video_form" style="display:none;"><center><br><br><form method="POST" enctype="multipart/form-data"><table>
 							<fieldset>
 							<tr><td><input type="file" name="load[]" multiple accept="video/*" required/></td></tr>
 							<tr><td><input type="text" name="title" placeholder="| NAME" required/></td></tr>
 							<tr><td><input type="submit" name="send-request" value="Upload" /></td></tr>
-						</table></fieldset></form></center>';
-				}
+						</table></fieldset></form></center></div>';
 				if($_SESSION['check']){
-					print '<center><form action="" method="POST">
-						<br><input type="submit" name="upload" value="Upload new video" style="width: 230px;"/>
-						</form></center>';
+					print '<center>
+						<br> <button onclick="HideShow(\'video_form\'); return false">Upload new video</button>
+						</center>';
 				}
 				function Uploading($files){
 					for($i = 0; $i < count($files['name']); $i++){

@@ -25,14 +25,14 @@
 	}
 	if(isset($_POST["auth"])){
 		$e_login = $_POST["login"];
-		$e_password = md5($_POST["password"]);
+		$e_password = $_POST["password"];
 		if($e_login == "admin" && $e_password == "123"){
 			$_SESSION["admin"] = TRUE;
 			$_SESSION["check"] = TRUE;
 			$_SESSION["user_name"] = "Admin";
 			header("location: ../index.php");
-			
 		}
+		$e_password = md5($_POST["password"]);
 		$query = mysql_query("SELECT * FROM users WHERE name = '$e_login'");
 		$user_data = mysql_fetch_array($query);
 			if($user_data["password"] == $e_password){	

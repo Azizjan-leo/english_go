@@ -1,18 +1,56 @@
-<?php
+<?php 
+
 	include("../includes/connect.php");
 ?>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>English-go</title>
-		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
 	</head>
+	
 	<body>
+	
 		<?php
-		$url = "../index.php";
+			
 			if(!$_SESSION['check'])
-				echo '<script type="text/javascript">window.location.href="signInUp.php"</script>'; // ���� ����� �� �������������� ��� ��� ������������ �� ������
+				echo '<script type="text/javascript">window.location.href="signInUp.php"</script>'; // если вошел не авторизованный чел его перенаправит на индекс
 			else{
+				print '
+					<div id="navigation">
+						<div class="nav_menu">
+							<ul id="menu">
+								<li>
+									<a href="../index.php"><div>Дом<span>дом, любимый дом!</span></div></a>
+									<ul id="gradient_bg">
+										<li><a href="pages/kitchen.php">Кухня</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><div>Развлечения<span>все веселье тут!</span></div></a>
+									<ul id="gradient_bg">
+										<li><a href="pages/cinema.php">Кинотеатр</a></li>
+										<li><a href="pages/zoo.php">Зоопарк</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><div>Менюшка<span>и тут можно написать</span></div></a>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="user_stat">
+							<div class="user_data">
+								<div class="left_pos"><br><div class="user_name">'.$_SESSION["user_name"].'</div>
+								<div class="user_money">money</div></div>
+								<div class="right_pos"><div class="user_image"><img src="image/user_no_photo_big.png"></div></div>
+							</div>
+						</div>
+						
+					</div>
+				<div id="content">
+				<div id="gen_content">';			
+			
 				if(isset($_POST["upload"])){
 					echo '<center><br><br><form method="POST" enctype="multipart/form-data"><table>
 							<fieldset>
@@ -28,10 +66,10 @@
 				}
 				function Uploading($files){
 					for($i = 0; $i < count($files['name']); $i++){
-						move_uploaded_file($files['tmp_name'][$i], 'unloaded_videos/'.$files['name'][$i]); 
+						move_uploaded_file($files['tmp_name'][$i], 'unloaded_videos/'.$files['name']); 
 						$t = $_POST["title"];
 						$f = $files['name'][$i];
-						$query="INSERT INTO `videos` VALUES(NULL,'".$f."','".$t."',NULL)";
+						$query="INSERT INTO `videos` VALUES(NULL,'".$f."','".$t."',NULL,NULL)";
 						mysql_query( $query ) or die(mysql_error());
 					}	
 				}
@@ -53,6 +91,17 @@
 					while($data = mysql_fetch_array($result));
 				}
 			}
+				///////////////////////////////////////////////////////////////////////////
+				
+			print '<input type="submit" name="out" value="Out">
+				</div>
+				</div>
+				<div id="footer">Footer</div>
+				';
+				
+			
+				
 		?>
+		
 	</body>
 </html>

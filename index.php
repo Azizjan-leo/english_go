@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	if(isset($_POST["out"])){
+	if(isset($_GET["out"])){
 			unset($_SESSON['name']);
 			$_SESSION['check'] = false;
 			session_unset();
@@ -9,7 +9,7 @@
 ?>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>English-go</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
@@ -58,7 +58,7 @@
 					</div>
 				<div id="content">
 				<div id="gen_content">
-				<a href="index.php"><button type="submit" name="out" value="out">Submit</button></a>
+					<a href="?out">Out</a>
 				</div>
 				</div>
 				<div id="footer">Footer</div>

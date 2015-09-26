@@ -59,7 +59,7 @@
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
 					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><input type='submit' name='auth' value='ENTER'></td></tr>
+					<tr><td><center><input type='submit' name='auth' value='ENTER'></center></td></tr>
 				</table>
 			  </form></center></div></div>";
 			}
@@ -70,7 +70,7 @@
 					<tr><td><input type='password' id='pass' onblur='checkPass()' name='password' placeholder='Password' required/></td></tr>
 					<tr><td><input type='password' id='passch' onKeyUp='checkPass()' name='r_password' placeholder='Repeat password' required/><br></td>
 					<td><b style='color: red' id='info'></b></td></tr>
-					<tr><td><input type='submit' name='signUp' value='ENTER'></td></tr>
+					<tr><td><center><input type='submit' name='signUp' value='ENTER'></center></td></tr>
 				</table>
 			  </form></center></div></div>";
 			}

@@ -51,14 +51,24 @@
 							<div class="user_data">
 								<div class="left_pos"><br><div class="user_name">'.$_SESSION["user_name"].'</div>
 								<div class="user_money">money</div></div>
-								<div class="right_pos"><div class="user_image"><img src="image/user_no_photo_big.png"></div></div>
+								<div class="right_pos">
+									<div id="user_nav">
+									<img src="image/user_no_photo_big.png">
+											<div id="down_menu">
+												<div class="triangle"></div>
+												<ul>
+													<li><a href="pages/users_settings.php">Настройки</a></li>
+													<li><a href="?out">Выход</a></li>
+												</ul>
+											</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						
 					</div>
 				<div id="content">
 				<div id="gen_content">
-					<a href="?out">Out</a>
 				</div>
 				</div>
 				<div id="footer">Footer</div>

@@ -1,7 +1,13 @@
-﻿body{
+﻿*{
+	font-family: Verdana, "Geneva CY", "DejaVu Sans", sans-serif !important;
+}
+
+html{
 	background-image: url("../image/bg.jpg");
 	background-size: cover;
-	font-family: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
+}
+
+body{
 	height: auto !important;
 	margin:0;
 }
@@ -236,7 +242,7 @@ z-index: 1000;
 	font-size: 100%;
 	font-family: Georgia;
 	overflow: visible;
-	}
+}
 
 #gradient_bg{
 background: linear-gradient(to bottom, rgba(58, 162, 173, 1) 0, rgba(62, 188, 207, 0.96) 100%);
@@ -307,3 +313,70 @@ width: 220px;
 	 background-color: rgba(0, 0, 0, .15);
 	}
 /*---------------------------------------------*/
+/*------------USER DROP MENU------------------*/
+#user_nav {
+	width:500px;
+	position: relative;
+	z-index:1000;
+	padding:0;
+	margin:0;
+}
+
+/*Стиль отображения списка при наведении*/
+#user_nav:hover{
+	height:auto;
+}
+
+#down_menu{
+	position:relative;
+	right: 80px;
+}
+
+/*Скрыть список и пункты списка*/
+#user_nav ul {
+	-webkit-border-radius:10px;
+	padding:0;
+	background-color: rgba(62, 188, 207, 1);
+	width: 130px;
+	height: auto;
+	list-style:none;
+	display:none;
+	position:relative;
+	top: -10px;
+	left:5px;
+}
+
+/*Отображение списка при наведении*/
+#user_nav:hover ul{
+	display:block;
+	margin-top:20px;
+}
+
+/*Стиль элементов списка*/
+#user_nav li a{
+	text-align:center;
+	font-size: 40px;
+	width: auto;
+	margin: 0px;
+	display:block;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*Стиль элемента при наведении*/
+#user_nav li a:hover{
+	background-color: rgba(0, 0, 0, .15);
+	-webkit-border-radius: 10px;
+}
+
+#user_nav:hover .triangle{
+	left: 100px;
+	content: ''; 
+    position: relative;
+	width:1px;
+    border: 10px solid transparent;
+	border: 10px solid transparent;	border-bottom: 10px solid rgba(62, 188, 207, 1);
+	top:10px;
+}
+/*-------------------------------------------------------*/

@@ -29,7 +29,7 @@
 								<li>
 									<a href="#"><div>Развлечения<span>все веселье тут!</span></div></a>
 									<ul id="gradient_bg">
-										<li><a href="pages/cinema.php">Кинотеатр</a></li>
+										<li><a href="cinema.php">Кинотеатр</a></li>
 										<li><a href="pages/zoo.php">Зоопарк</a></li>
 									</ul>
 								</li>
@@ -49,57 +49,51 @@
 						
 					</div>
 				<div id="content">
-				<div id="gen_content">';			
-			
-				if(isset($_POST["upload"])){
-					echo '<center><br><br><form method="POST" enctype="multipart/form-data"><table>
-							<fieldset>
-							<tr><td><input type="file" name="load[]" multiple accept="video/*" required/></td></tr>
-							<tr><td><input type="text" name="title" placeholder="| NAME" required/></td></tr>
-							<tr><td><input type="submit" name="send-request" value="Upload" /></td></tr>
-						</table></fieldset></form></center>';
+				<div id="gen_content">';	
+
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+				if(isset($_POST["submit"])){
+				   function Uploading($files){
+							
+										move_uploaded_file($files['tmp_name'], './video/'.$files['name']); 
+										$t = $_POST["title"];
+										$f = $files['name'];
+										$query="INSERT INTO videos VALUES(NULL,'".$f."')";
+										mysql_query( $query ) or die(mysql_error());
+								}
+								if(isset($_POST['submit']))
+									Uploading($_FILES['file']);	
 				}
-				if($_SESSION['check']){
-					print '<center><form action="" method="POST">
-						<br><input type="submit" name="upload" value="Upload new video" style="width: 230px;"/>
-						</form></center>';
-				}
-				function Uploading($files){
-					for($i = 0; $i < count($files['name']); $i++){
-						move_uploaded_file($files['tmp_name'][$i], 'unloaded_videos/'.$files['name']); 
-						$t = $_POST["title"];
-						$f = $files['name'][$i];
-						$query="INSERT INTO `videos` VALUES(NULL,'".$f."','".$t."',NULL,NULL)";
-						mysql_query( $query ) or die(mysql_error());
-					}	
-				}
-				if(isset($_POST['send-request']))
-					Uploading($_FILES['load']);	
-				$result = mysql_query("SELECT * FROM videos ORDER By id DESC") or die(mysql_error());
-				$data = mysql_fetch_array($result);
-				if($data!=0){
-					do{
-						printf('
-							<div class="video">
-								<h1>%s</h1>
-								<video height="400" width="600" controls="controls" poster="">
-									<source src="unloaded_videos/%s">
-								</video>
-							</div><br/><p>%s</p>
-							',$data["title"],$data["name"],$data["date"]);
-					}
-					while($data = mysql_fetch_array($result));
-				}
-			}
-				///////////////////////////////////////////////////////////////////////////
-				
-			print '<input type="submit" name="out" value="Out">
-				</div>
-				</div>
-				<div id="footer">Footer</div>
-				';
-				
-			
+					$result = mysql_query("SELECT * FROM videos") or die(mysql_error());
+								$data = mysql_fetch_array($result);
+								if($data>0){
+									do{
+										printf('
+											
+												<video height="400" width="600" controls="controls" poster="">
+													<source src="video/%s">
+												</video>
+											
+											',$data["name"]);
+									}
+									while($data = mysql_fetch_array($result));
+								}
+					
+
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							print '
+							<form action="" method="post" enctype="multipart/form-data">
+								Select image to upload:
+								<input type="file" name="file" id="file">
+								<input type="submit" value="Upload Image" name="submit">
+							</form>
+								</div>
+								</div>
+								<div id="footer">Footer</div>
+								';
+								
+			}	
 				
 		?>
 		

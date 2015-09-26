@@ -131,7 +131,7 @@ box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
 text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
 }
 
-input[type="submit"]{
+input[type="submit"], button{
 background-color: #1496c9;
 width: auto;
 height: auto;

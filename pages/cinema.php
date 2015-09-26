@@ -7,6 +7,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>English-go</title>
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+		<script src="../scripts/scripts.js"></script>
+
 	</head>
 	
 	<body>
@@ -49,6 +51,7 @@
 						
 					</div>
 				<div id="content">
+<<<<<<< HEAD
 				<div id="gen_content">';	
 
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,6 +67,45 @@
 								}
 								if(isset($_POST['submit']))
 									Uploading($_FILES['file']);	
+=======
+				<div id="gen_content">';			
+					echo '<div id="video_form" style="display:none;"><center><br><br><form method="POST" enctype="multipart/form-data"><table>
+							<fieldset>
+							<tr><td><input type="file" name="load[]" multiple accept="video/*" required/></td></tr>
+							<tr><td><input type="text" name="title" placeholder="| NAME" required/></td></tr>
+							<tr><td><input type="submit" name="send-request" value="Upload" /></td></tr>
+						</table></fieldset></form></center></div>';
+				if($_SESSION['check']){
+					print '<center>
+						<br> <button onclick="HideShow(\'video_form\'); return false">Upload new video</button>
+						</center>';
+				}
+				function Uploading($files){
+					for($i = 0; $i < count($files['name']); $i++){
+						move_uploaded_file($files['tmp_name'][$i], 'unloaded_videos/'.$files['name']); 
+						$t = $_POST["title"];
+						$f = $files['name'][$i];
+						$query="INSERT INTO `videos` VALUES(NULL,'".$f."','".$t."',NULL,NULL)";
+						mysql_query( $query ) or die(mysql_error());
+					}	
+				}
+				if(isset($_POST['send-request']))
+					Uploading($_FILES['load']);	
+				$result = mysql_query("SELECT * FROM videos ORDER By id DESC") or die(mysql_error());
+				$data = mysql_fetch_array($result);
+				if($data!=0){
+					do{
+						printf('
+							<div class="video">
+								<h1>%s</h1>
+								<video height="400" width="600" controls="controls" poster="">
+									<source src="unloaded_videos/%s">
+								</video>
+							</div><br/><p>%s</p>
+							',$data["title"],$data["name"],$data["date"]);
+					}
+					while($data = mysql_fetch_array($result));
+>>>>>>> 0d0d2c3e672d86e5eacdb1af26301d9ed25cd3ca
 				}
 					$result = mysql_query("SELECT * FROM videos") or die(mysql_error());
 								$data = mysql_fetch_array($result);

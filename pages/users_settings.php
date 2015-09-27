@@ -1,5 +1,16 @@
 <?php 
-	include("../includes/connect.php")
+	include("../includes/connect.php");
+	if(isset($_POST['confirm'])){
+		$userName = $_SESSION['user_name'];
+		$newLastName = $_POST['last_name'];
+		$newFirstName = $_POST['first_name'];
+		$newAge = $_POST['age'];
+		$query = "UPDATE  users SET name = '$newFirstName', last_name = '$newLastName', age = '$newAge' WHERE  name = '$userName'";
+		if(mysql_query($query)){
+			$_SESSION['user_name'] = $newFirstName;
+			echo "Изменения внесены";
+		}
+	}
 ?>
 <html>
 	<head>
@@ -13,8 +24,8 @@
 			if($_SESSION['check'] = TRUE){
 				print
 					"<form  method='post' action=''><table>
-						<tr><td> First name </td><td><input type='text' name='last_name' required/></td></tr>
-						<tr><td> Last name </td><td><input type='text' name='age' required/></td></tr>
+						<tr><td> First name </td><td><input type='text' name='first_name' required/></td></tr>
+						<tr><td> Last name </td><td><input type='text' name='last_name' required/></td></tr>
 						<tr><td> Age </td><td><input type='text' name='age' required/></td></tr>
 						<tr><td> Sex </td><td><table>
 						<tr><td><b style='color: red' id='genderInfo'><img src='../image/male.png'></td>

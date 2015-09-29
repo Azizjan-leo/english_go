@@ -4,8 +4,9 @@
 		$userName = $_SESSION['user_name'];
 		$newLastName = $_POST['last_name'];
 		$newFirstName = $_POST['first_name'];
+		$gender = ($_POST['gender'] == 'Female' ? true : false);
 		$newAge = $_POST['age'];
-		$query = "UPDATE  users SET name = '$newFirstName', last_name = '$newLastName', age = '$newAge' WHERE  name = '$userName'";
+		$query = "UPDATE  users SET name = '$newFirstName', last_name = '$newLastName', age = '$newAge', sex = '$gender' WHERE  name = '$userName'";
 		if(mysql_query($query)){
 			$_SESSION['user_name'] = $newFirstName;
 			echo "Изменения внесены";

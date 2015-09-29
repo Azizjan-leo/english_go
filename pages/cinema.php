@@ -1,7 +1,4 @@
-<?php 
-
-	include("../includes/connect.php");
-?>
+<?php include("../includes/connect.php"); ?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,11 +10,8 @@
 	
 	<body>
 	
-<?php
-if(!$_SESSION['check'])
-	echo '<script type="text/javascript">window.location.href="signInUp.php"</script>'; // если вошел не авторизованный чел его перенаправит на индекс
-else{
-	print '
+<?php if(!$_SESSION['check']) /*  ПРОВЕРКА РЕГИСТРАЦИИ ВОШЕДШЕГО */	echo '<script type="text/javascript">window.location.href="signInUp.php"</script>'; // если вошел не авторизованный чел его перенаправит на индекс ?>
+
 <div id="navigation">
 						<div class="nav_menu">
 							<ul id="menu">
@@ -42,7 +36,7 @@ else{
 						
 						<div class="user_stat">
 							<div class="user_data">
-								<div class="left_pos"><br><div class="user_name">'.$_SESSION["user_name"].'</div>
+								<div class="left_pos"><br><div class="user_name"><? echo $_SESSION["user_name"] ?></div>
 								<div class="user_money">money</div></div>
 								<div class="right_pos">
 									<div id="user_nav">
@@ -61,41 +55,22 @@ else{
 						
 					</div>
 			<div id="content">
-			<div id="gen_content">';	
-	if(isset($_POST["send-request"])){
-			function Uploading($files){
-				move_uploaded_file($files['tmp_name'], './video/'.$files['name']); 
-				$f = $files['name'];
-				$query="INSERT INTO videos VALUES(NULL,'".$f."')";
-				mysql_query( $query ) or die(mysql_error());
-			}
-			Uploading($_FILES['file']);	
-	}
-	$result = mysql_query("SELECT * FROM videos") or die(mysql_error());
-	$data = mysql_fetch_array($result);
-	if($data>0){
-		do{
-			printf('
-					<video height="400" width="600" controls="controls" poster="">
-						<source src="video/%s">
-					</video><br>',$data["name"]);
-				}while($data = mysql_fetch_array($result));
-			}
-			
-	echo '<div id="video_form" style="display:none;"><center><br><br><form method="POST" action="" enctype="multipart/form-data"><table><fieldset>
-					<tr><td><input type="file" name="file" multiple accept="video/*" required/></td></tr>
-					<tr><td><input type="text" name="title" placeholder="| NAME" required/></td></tr>
-					<tr><td><input type="submit" name="send-request" value="Upload" /></td></tr>
-				  </table></fieldset></form></center></div>
-				  <center><br><br><button onClick="HideShow(\'video_form\')">Add new video</button></center>
-				  ';
-	print '
-		
+				<?php
+					printf('
+							<ul><li><a href="cinema.php?genre=%s">Клипы</a></li>
+								<li><a href="cinema.php?genre=%s">IT-video</a></li>
+								<li><a href="cinema.php?genre=%s">Триллеры</a></li>
+								<li><a href="cinema.php?genre=%s">Ужасы</a></li>
+								<li><a href="cinema.php?genre=%s">Комедии</a></li>
+								<li><a href="cinema.php?genre=%s">Другое</a></li></ul>',
+								clip,it,triller,horror,comedy,other);
+					
+					if(isset($_GET["genre"])){
+							$name = $_GET["genre"];
+							include("view_videos/$name.php");
+					}
+				?>
 		</div>
-		</div>
-		<div id="footer">Footer</div>';
-}
-?>
-		
+		<div id="footer">Footer</div>
 	</body>
 </html>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 26, 2015 at 04:59 PM
+-- Generation Time: Sep 28, 2015 at 05:07 PM
 -- Server version: 5.5.41-log
 -- PHP Version: 5.3.29
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `users`
@@ -58,7 +58,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `password`, `last_name`, `age`, `sex`, `skil_color`, `hair_length`) VALUES
 (2, 'фяф', '0e0d39c7e46f5135a6ebc021a9e0c9e0', '', 0, 0, 0, 0),
-(3, 'aza', '99eb73df38d97583b431742ba8868314', '', 0, 0, 0, 0);
+(3, 'Azizjan', '99eb73df38d97583b431742ba8868314', 'Ayupov', 23, 0, 0, 0),
+(4, 'Lena', '', 'Lena', 12, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -69,15 +70,9 @@ INSERT INTO `users` (`id`, `name`, `password`, `last_name`, `age`, `sex`, `skil_
 CREATE TABLE IF NOT EXISTS `videos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
+  `type` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `videos`
---
-
-INSERT INTO `videos` (`id`, `name`) VALUES
-(2, 'Skrillex - Ruffneck - FULL Flex.mp4');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

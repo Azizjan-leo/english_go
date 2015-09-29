@@ -32,7 +32,6 @@ width: 85%;
 }
 
 #gen_content{
-
 }
 
 #footer{
@@ -41,6 +40,9 @@ height:50px;
 width: 85%;
 }
 
+.clear{
+clear:both;
+}
 
 #sign, #sign_form, #settings{
 	position:relative; /*Положение блока относительно исходного места*/
@@ -380,3 +382,49 @@ width: 220px;
 	top:10px;
 }
 /*-------------------------------------------------------*/
+/*----------Settings page left menu & content------------*/
+#left_menu{
+	height: 100%;
+	width: 60px;
+	background-color: rgba(230, 230, 230, 1);
+	float:left;
+}
+
+.menu_bar{
+	padding: 0;
+	height: auto;
+	list-style:none;
+	position:relative;
+	width: 60px;
+}
+
+.menu_bar li{
+	width: 60px;
+	height: 60px;
+	text-align:center;
+}
+
+.menu_bar img{
+	padding: 14px 0 14px 0;
+}
+
+.menu_bar li:hover{
+	background-color: rgba(200, 200, 200, 0.5)
+}
+
+#account_settings, #man_settings {
+	width: 100%;
+	height:100%;
+}
+
+#man_settings{
+	/*background-color: rgba(129, 129, 129, 1);*/
+}
+
+#account_settings{
+	/*background-color: rgba(82, 82, 82, 1);*/
+}
+
+#right_content{
+	
+}

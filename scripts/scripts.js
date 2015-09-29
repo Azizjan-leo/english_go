@@ -38,3 +38,12 @@ function HideShow(id){
        document.getElementById(id).style.display='none';
     }
 }
+
+function HideShowContent(id, id2){
+    display = document.getElementById(id).style.display;
+    if(display=='none'){
+       document.getElementById(id).style.display='block';
+	   document.getElementById(id2).style.display='none';
+	   
+    }
+}

@@ -67,12 +67,27 @@
 			<div id="content">
 				<div id="left_menu">
 					<ul class="menu_bar">
-						<li onClick="HideShowContent(\'man_settings\', \'account_settings\')""><img src="../image/settings.png"></li>
-						<li onClick="HideShowContent(\'account_settings\', \'man_settings\')"><img src="../image/settings.png"></li>
+						<li id="menu_man_settings" onClick="HideShowContent(\'man_settings\', \'account_settings\', \'menu_man_settings\', \'menu_account_settings\')""><img src="../image/user_setting.png"></li>
+						<li id="menu_account_settings" onClick="HideShowContent(\'account_settings\', \'man_settings\', \'menu_account_settings\', \'menu_man_settings\')"><img src="../image/settings.png"></li>
 					</ul>
 				</div>
 				<div id="right_content">
-					<div id="man_settings" style="display:block;">1</div>
+					<div id="man_settings" style="display:block;">
+						<div id="gen_set">
+						<form  method="post" action=""><table>
+						<tr><td> Имя </td><td><input type="text" name="name" required/></td></tr>
+						<tr><td> Пол </td><td><div class="gender">
+							<input type="checkbox" name="gender" class="gender-checkbox" id="mygender" checked>
+							<label class="gender-label" for="mygender">
+								<span class="gender-inner"></span>
+								<span class="gender-switch"></span>
+							</label>
+						</div></tr></td>
+						<tr><td></td><td><input type="submit" name="confirm" value="Сохранить"></td></tr>
+						</table>
+						</form>
+						</div>
+					</div>
 					<div id="account_settings" style="display:none;">2</div>
 				</div>
 				<div class="clear"></div>

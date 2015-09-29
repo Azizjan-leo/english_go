@@ -128,31 +128,28 @@ width: auto;
 height: auto;
 position: relative;
 padding: 10px 20px; /*отступы границ блока относительно текста*/
-border: 2px solid #c4c4c4;
--webkit-border-radius: 7px; /*радиус закругления углов*/
+border: 1px solid #018dc4; /*углы*/
+-webkit-border-radius: 5px; /*радиус закругления углов*/
 border-radius: 7px;
 font: normal 16px/normal "Times New Roman", Times, serif;
 color: rgba(0,142,198,1);
 background: rgba(247,247,247,1);
--webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset; /*тени*/
-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
 text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+cursor: pointer;
 }
 
 input[type="submit"], button{
-background-color: #1496c9;
+background-color: rgba(62, 188, 207, 1);
 width: auto;
 height: auto;
 padding: 10px 20px;
 position: relative;
 font: normal 16px/normal "Times New Roman", Times, serif;
-color: rgba(255,255,255,0.9);
--webkit-box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.2) inset; /*тени*/
-box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.2) inset;
-text-shadow: -1px -1px 0 rgba(0,57,150,0.66);
+color: rgba(255,255,255, 1);
 border: 1px solid #018dc4; /*углы*/
 -webkit-border-radius: 5px;
 border-radius: 5px;
+cursor: pointer;
 }
 
 #sign img{
@@ -160,50 +157,6 @@ width: 32px;
 height: 32px;
 }
 
-/*Строка переключателя пола*/
-.toggle-bg{
-	background: #fff linear-gradient(#BCBCBC, #fff0f5);
-    display: block; /*Для установки высоты и ширины*/
-    float: left; /*Расположение*/
-    height: 12px;
-    position: relative;
-    width: 35px;
-	border-radius: 8px; /*закругление*/
-	box-shadow: 0 1px 0 #fff, inset 0 0 2px #d7dee3, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
-}
- 
-.toggle-bg input{
-    height: 28px;
-    left: 0;
-    margin: 0; /*Сбрось поля и отступa*/
-    opacity: 0; /*Прозрачность*/
-    padding: 0;
-    position: absolute;
-    top: -10px; /* Сдвиг по вертикали */
-    width: 36px;
-    z-index: 2; /*Расположение поверх switch*/
-}
- 
- /*Переключатель*/
-.switch{
-    background: radial-gradient(ellipse at center, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#cccccc 100%);
-    display: block;
-    float: left;
-    height: 18px;
-    left: -1px;
-    position: relative;
-    top: -4px; /*Оцентрировать по вертикали */
-    width: 18px;
-    z-index: 1; /*Расположение под input*/
-	border-radius: 8px;
-	transition: left .2s ease; /*Плавный переход*/
-	box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
-}
- 
-.toggle-bg input:checked~.switch{ left: -1px; } /*Исходная позиция переключателя*/
-.toggle-bg input~:checked~.switch{ left: 16px; } /*окончательная относительная позиция переключателя*/
-.toggle-bg input:checked{ z-index: 0; }
-/*Конец переключателя поля пол*/
 
 /*Ползунок*/
 #slider {
@@ -409,7 +362,7 @@ width: 220px;
 }
 
 .menu_bar li:hover{
-	background-color: rgba(200, 200, 200, 0.5)
+	background-color: rgba(200, 200, 200, 0.5);
 }
 
 #account_settings, #man_settings {
@@ -417,14 +370,95 @@ width: 220px;
 	height:100%;
 }
 
-#man_settings{
-	/*background-color: rgba(129, 129, 129, 1);*/
+#menu_man_settings{
+	background-color:rgba(255, 255, 255, 1);
 }
 
-#account_settings{
-	/*background-color: rgba(82, 82, 82, 1);*/
+#man_settings{
+	margin-right: 50%;
 }
 
 #right_content{
-	
+	position:relative;
+	margin-left:60px;
+}
+
+#gen_set table{
+	padding-top:15px;
+}
+#gen_set td{
+	padding-left: 15px;
+	font-size: 18px;
+}
+
+#gen_set input[type="submit"]{
+	width:247px;
+}
+/*-----------------------------------------------------*/
+/*-----------------Switch gender-----------------------*/
+.gender {
+    position: relative;
+	width: 247px;
+    -webkit-user-select:none; 
+	-moz-user-select:none; 
+	-ms-user-select: none;
+}
+.gender-checkbox {
+    display: none;
+}
+.gender-label {
+    display: block; 
+	overflow: hidden;
+	cursor: pointer;
+    border: 2px solid #FFFFF;
+	border-radius: 5px;
+	border: 1px solid #018dc4;
+}
+.gender-inner {
+    display: block;
+	width: 200%;
+	margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.gender-inner:before, .gender-inner:after {
+    display: block;
+	float: left;
+	width: 50%;
+	height: 45px;
+	padding: 0;
+	line-height: 45px;
+    font-size: 25px;
+	color: white;
+    box-sizing: border-box;
+}
+.gender-inner:before {
+    content: "мужской";
+    padding-left: 21px;
+    background-color:rgba(62, 188, 207, 1);
+	color: #FFFFFF;
+}
+.gender-inner:after {
+    content: "женский";
+    padding-right: 21px;
+    background-color: rgba(255, 128, 208, 1); color: #FFFFFF;
+    text-align: right;
+}
+.gender-switch {
+    display: block;
+	width: 45px;
+	margin: 9.5px;
+    background: #FFFFFF;
+    position: absolute;
+	top: 0;
+	bottom: 0;
+    right: 182px;
+    border: 2px solid #FFFFF;
+	border-radius: 11px;
+    transition: all 0.3s ease-in 0s; 
+}
+.gender-checkbox:checked + .gender-label .gender-inner {
+    margin-left: 0;
+}
+.gender-checkbox:checked + .gender-label .gender-switch {
+    right: 0px; 
 }

@@ -57,12 +57,12 @@
 			<div id="content">
 				<?php
 					printf('
-							<ul><li><a href="cinema.php?genre=%s">Клипы</a></li>
+							<div id="cinema_line"><ul><li><a href="cinema.php?genre=%s">Клипы</a></li>
 								<li><a href="cinema.php?genre=%s">IT-video</a></li>
 								<li><a href="cinema.php?genre=%s">Триллеры</a></li>
 								<li><a href="cinema.php?genre=%s">Ужасы</a></li>
 								<li><a href="cinema.php?genre=%s">Комедии</a></li>
-								<li><a href="cinema.php?genre=%s">Другое</a></li></ul>',
+								<li><a href="cinema.php?genre=%s">Другое</a></li></ul></div>',
 								clip,it,triller,horror,comedy,other);
 					
 					if(isset($_GET["genre"])){

@@ -52,16 +52,7 @@
 	<body>
 	<?php
 			$inFor = $_GET["infor"];
-			if(!$_SESSION["check"]){
-				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
-				<table>
-					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
-					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
-					<tr><td><center><input type='submit' name='auth' value='ENTER'></center></td></tr>
-				</table>
-			  </form></center></div></div>";
-			}
-			elseif($inFor == signup && !$_SESSION["check"]){
+			if($inFor == signup && !$_SESSION["check"]){
 				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
@@ -70,8 +61,20 @@
 					<td><b style='color: red' id='info'></b></td></tr>
 					<tr><td><center><input type='submit' name='signUp' value='ENTER'></center></td></tr>
 				</table>
-			  </form></center></div></div>";
+			  </form></center>
+			  <a href='signInUp.php?infor=signin'>Sign In</a></div></div></div></div>";
 			}
+			elseif(!$_SESSION["check"]){
+				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
+				<table>
+					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
+					<tr><td><input type='password' name='password' placeholder='Password' required/></td></tr>
+					<tr><td><center><input type='submit' name='auth' value='ENTER'></center></td></tr>
+				</table>
+			  </form></center>
+			  <a href='signInUp.php?infor=signup'>Sign up</a></div></div>";
+			}
+			else
 ?>
 	</body>
 </html>

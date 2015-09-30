@@ -2,7 +2,7 @@
 	session_start();
 	if(isset($_GET["out"])){
 			unset($_SESSON['name']);
-			$_SESSION['check'] = false;
+			$_SESSION['check'] = FALSE;
 			session_unset();
 			session_destroy();
 	}
@@ -49,7 +49,7 @@
 						
 						<div class="user_stat">
 							<div class="user_data">
-								<div class="left_pos"><br><div class="user_name">'.$_SESSION["user_name"].'</div>
+								<div class="left_pos"><br><div class="user_name">'.$_SESSION["login"].'</div>
 								<div class="user_money">money</div></div>
 								<div class="right_pos">
 									<div id="user_nav">
@@ -58,7 +58,7 @@
 												<div class="triangle"></div>
 												<ul>
 													<li><a href="pages/users_settings.php">Настройки</a></li>
-													<li><a href="?out">Выход</a></li>
+													<li><a href="includes/out.php?out">Выход</a></li>
 												</ul>
 											</div>
 									</div>
@@ -72,8 +72,7 @@
 				</div>
 				</div>
 				<div id="footer">Footer</div>
-				';
-				
+				';		
 			}
 				
 		?>

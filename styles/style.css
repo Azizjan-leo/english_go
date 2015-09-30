@@ -22,7 +22,7 @@ margin:auto;
 background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
 height:84px;
 width: 90%;
--webkit-border-radius: 0 0 15px 15px;
+-webkit-border-radius: 0 0 13px 13px;
 }
 
 #content{
@@ -219,22 +219,22 @@ background: linear-gradient(to bottom, rgba(58, 162, 173, 1) 0, rgba(62, 188, 20
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	width: 220px;
+	width: 160px;
 	display: none;
 	position: absolute;
-	left: 0;
+	left: 11px;
 	top: 84px;
 	}
 #menu li ul li {
 	float: none;
 	height: 33px;
 	margin: 0;
-	width: 220px;
+	width: 160px;
 	text-align: center;
 	}
 
 #menu  ul  li a {
-width: 220px;
+width: 160px;
 }
 	
 #menu li a {
@@ -261,12 +261,16 @@ width: 220px;
     line-height: 2rem;
 	font-family: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
   }
-#menu li:hover ul, #menu li.jshover ul {
+
+  #menu li:hover ul, #menu li.jshover ul {
 	display: block;
-	}
-#menu li:hover, #menu li.jshover {
-	 background-color: rgba(0, 0, 0, .15);
-	}
+	border-radius:0 0 13px 13px;
+}
+#menu li:hover, #menu li.jshover{
+	background-color: rgba(0, 0, 0, .15);
+	border-radius: 0 0 13px 13px;
+}
+
 /*---------------------------------------------*/
 /*------------USER DROP MENU------------------*/
 #user_nav {

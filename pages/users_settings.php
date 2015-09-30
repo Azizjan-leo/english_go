@@ -1,16 +1,19 @@
 <?php 
 	include("../includes/connect.php");
 	if(isset($_POST['confirm'])){
-		$userName = $_SESSION['user_name'];
+		$login = $_SESSION['login'];
 		$newName = $_POST['name'];
 		
 		print $_POST['gender'];
 		$newAge = $_POST['age'];
-		$query = "UPDATE  users SET name = '$newName', sex = '$gender' WHERE  name = '$userName'";
+		$query = "UPDATE  users SET name = '$newName', sex = '$gender' WHERE  name = '$login'";
 		if(mysql_query($query)){
-			$_SESSION['user_name'] = $newName;
+			$_SESSION['login'] = $login;
 			print $_POST['gender'];
 		}
+	}
+	if(isset($_GET['out'])){
+		$_SESSION['check'] = FALSE;
 	}
 ?>
 <html>
@@ -21,7 +24,8 @@
 	</head>
 	<body>
 		<?php
-			if($_SESSION['check'] = TRUE){
+		if(!$_SESSION['check']) /*  ПРОВЕРКА РЕГИСТРАЦИИ ВОШЕДШЕГО */	echo '<script type="text/javascript">window.location.href="signInUp.php"</script>'; // если вошел не авторизованный чел его перенаправит на индекс 
+			else{
 				print'
 					<div id="navigation">
 						<div class="nav_menu">
@@ -47,7 +51,7 @@
 						
 						<div class="user_stat">
 							<div class="user_data">
-								<div class="left_pos"><br><div class="user_name">'.$_SESSION["user_name"].'</div>
+								<div class="left_pos"><br><div class="login">'.$_SESSION["login"].'</div>
 								<div class="user_money">money</div></div>
 								<div class="right_pos">
 									<div id="user_nav">
@@ -56,7 +60,7 @@
 												<div class="triangle"></div>
 												<ul>
 													<li><a href="../pages/users_settings.php">Настройки</a></li>
-													<li><a href="?out">Выход</a></li>
+													<li><a href="../includes/out.php?out">Выход</a></li>
 												</ul>
 											</div>
 									</div>
@@ -89,7 +93,11 @@
 						</form>
 						</div>
 					</div>
-					<div id="account_settings" style="display:none;">2</div>
+					<div id="account_settings" style="display:none;">
+						<form method="post" id="account_settings">
+							<intput type="text" name="userName" value=""/>
+						</form>
+					</div>
 				</div>
 				<div class="clear"></div>
 			</div>

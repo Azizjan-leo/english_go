@@ -1,7 +1,6 @@
 <?php 
 	session_start();
 	include("../includes/connect.php");
-	
 	if(isset($_POST["signUp"])){
 		$password = $_POST["password"];
 		$r_password = $_POST["r_password"];
@@ -15,7 +14,7 @@
 				$password = md5($password);
 				mysql_query("INSERT INTO users VALUES('','$login','$password','','','','','')") or die(mysql_error());
 				$_SESSION["check"] = TRUE;
-				$_SESSION["user_name"] = $login;
+				$_SESSION["login"] = $login;
 				header("location: users_settings.php");
 			}
 			else
@@ -29,14 +28,14 @@
 		if($e_login == "admin" && $e_password == "123"){
 			$_SESSION["admin"] = TRUE;
 			$_SESSION["check"] = TRUE;
-			$_SESSION["user_name"] = "Admin";
+			$_SESSION["login"] = "Admin";
 			header("location: ../index.php");
 		}
 		$e_password = md5($_POST["password"]);
 		$query = mysql_query("SELECT * FROM users WHERE name = '$e_login'");
 		$user_data = mysql_fetch_array($query);
 			if($user_data["password"] == $e_password){	
-			$_SESSION["user_name"] = $user_data["name"];
+			$_SESSION["login"] = $user_data["name"];
 			$_SESSION["check"] = TRUE;
 			header("location: ../index.php");
 		}
@@ -52,9 +51,8 @@
 	</head>
 	<body>
 	<?php
-		if(isset($_GET["infor"])){
 			$inFor = $_GET["infor"];
-			if($inFor == signin && !$_SESSION["check"]){
+			if(!$_SESSION["check"]){
 				echo "<div id='sign'><div class='signtext'><center><form  method='post' action=''>
 				<table>
 					<tr><td><input type='text' name='login' placeholder='Name' required/></td></tr>
@@ -74,7 +72,6 @@
 				</table>
 			  </form></center></div></div>";
 			}
-		}
 ?>
 	</body>
 </html>

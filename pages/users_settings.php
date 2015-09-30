@@ -80,14 +80,11 @@
 					<div id="man_settings" style="display:block;">
 						<div id="gen_set">
 						<form  method="post" action=""><table>
-						<tr><td> Имя </td><td><input type="text" name="name" /></td></tr>
-						<tr><td> Пол </td><td><div class="gender">
-							<input type="checkbox" name="gender" class="gender-checkbox" id="mygender" checked>
-							<label class="gender-label" for="mygender">
-								<span class="gender-inner"></span>
-								<span class="gender-switch"></span>
-							</label>
-						</div></tr></td>
+						<tr><td> Имя <td><input type="text" name="name" /></td></tr>
+						<tr><td> Пол </td><td>
+						<div id="gender"><button value="male" id="male"><img src="../image/male.png"></button>
+						<button type="button" value="female" id="female"><img src="../image/female.png"></button></div>
+						</td></tr>
 						<tr><td></td><td><input type="submit" name="confirm" value="Сохранить"></td></tr>
 						</table>
 						</form>
